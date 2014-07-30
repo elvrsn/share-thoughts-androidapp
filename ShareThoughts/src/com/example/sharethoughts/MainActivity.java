@@ -38,7 +38,6 @@ public class MainActivity extends ActionBarActivity {
 	
 	private ListView mainListView;  
 	private ArrayAdapter<String> listAdapter;
-	public String content;
 	
 	protected boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -48,6 +47,16 @@ public class MainActivity extends ActionBarActivity {
 		} else {
 			return false;
 		}
+	}
+	
+	protected void addThought() {
+		Intent intent = new Intent(this, AddActivity.class);
+		startActivity(intent);
+	}
+	
+	protected void aboutST() {
+		Intent intent = new Intent(this, AboutActivity.class);
+		startActivity(intent);
 	}
 	
 	public void populateView(ArrayList<String> title_list, ArrayList<String> content_list) {
@@ -72,6 +81,7 @@ public class MainActivity extends ActionBarActivity {
 				startActivity(intent);
 			}
        });
+        
 
 	}
 	
@@ -117,8 +127,10 @@ public class MainActivity extends ActionBarActivity {
     	            }
     	        } catch (ClientProtocolException e) {
     	            //TODO Handle problems..
+    	        	e.printStackTrace();
     	        } catch (IOException e) {
     	            //TODO Handle problems..
+    	        	e.printStackTrace();
     	        }
     	        return responseString;
     	    }
@@ -131,6 +143,7 @@ public class MainActivity extends ActionBarActivity {
     	        web_response = (String) result;
     	        
     	        String title = null;
+    	        String content = null;
     	        if (web_response != null) {
     	        	try {
 						JSONObject jsonObj = new JSONObject(web_response);
@@ -171,15 +184,18 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_addthought) {
+        	addThought();
+        }
+        else if (id == R.id.action_about) {
+        	aboutST();
         }
         return super.onOptionsItemSelected(item);
     }

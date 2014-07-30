@@ -14,6 +14,16 @@ import android.widget.ListView;
 
 public class ContentActivity extends ActionBarActivity {
 	
+	protected void addThought() {
+		Intent intent = new Intent(this, AddActivity.class);
+		startActivity(intent);
+	}
+	
+	protected void aboutST() {
+		Intent intent = new Intent(this, AboutActivity.class);
+		startActivity(intent);
+	}
+	
 	@Override
 	protected void onStart() {
 		super.onStart();
@@ -39,7 +49,7 @@ public class ContentActivity extends ActionBarActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.content, menu);
+		getMenuInflater().inflate(R.menu.content, menu);
 		return true;
 	}
 
@@ -49,9 +59,12 @@ public class ContentActivity extends ActionBarActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+		if (id == R.id.action_addthought) {
+        	addThought();
+        }
+        else if (id == R.id.action_about) {
+        	aboutST();
+        }
 		return super.onOptionsItemSelected(item);
 	}
 }

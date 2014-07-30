@@ -15,5 +15,18 @@
     <string name="text_9">Text 9</string>
     <string name="text_10">Text 10</string>
     <string name="title_activity_content">ContentActivity</string>
+    <string name="add_thought">Add Thought</string>
+    <string name="about">About</string>
+    <string name="aboutst">Share Thoughts provides the way to connect with people anonymously, express yourself and discover shared thoughts. 
+        If you have any ideas or thoughts to share anonymously, then you are at right place.
+        You can also visit <a href="http://www.share-thoughts.com">http://www.share-thoughts.com</a></string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="about_share_thoughts">About Share Thoughts</string>
+    <string name="title">TITLE</string>
+    <string name="enter_title_here">Enter Title Here</string>
+    <string name="content">CONTENT</string>
+    <string name="enter_content_here">Enter Content Here</string>
+    <string name="submit">Submit</string>
 
 </resources>
