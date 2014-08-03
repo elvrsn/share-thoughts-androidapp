@@ -15,7 +15,7 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@color/black</item>
         <item name="android:colorBackground">@color/black</item>
         <item name="android:typeface">monospace</item>
